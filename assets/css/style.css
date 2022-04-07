@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+img {
+    max-width: 100%;
+}
+
 header {
     text-align: center;
     padding: 3rem;
@@ -16,14 +20,55 @@ header h2, header p {
 .container {
     margin: auto;
     max-width: 1200px;
-    background-color: aqua;
 }
 
 .row {
     display: flex;
     flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 40px ;
 }
 
 .col {
-    width: calc(100% / 3)
+    width: calc(100% / 3 - 20px);
+    text-align: center;
+    
 }
+
+.name {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.role {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.add_member {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add_name, .add_role, .add_img {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+label {
+    margin-bottom: 3px;
+}
+
+input {
+    width: 350px;
+}
+
+.btn button {
+    padding: 5px 50px;
+    
+}
+

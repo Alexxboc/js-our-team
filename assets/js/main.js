@@ -51,7 +51,7 @@ for (let i = 0; i < team.length; i++) {
     // Creo l'elemento da appendere alla dom
     let colHtmlElement = `
     <div class="col">
-        <img src="${info['image']}" alt="">
+        <img src="./assets/img/${info['image']}" alt="">
         <div class="name">${info['name']}</div>
         <div class="role">${info['role']}</div>
     </div>`
@@ -60,7 +60,7 @@ for (let i = 0; i < team.length; i++) {
 
     // console.log(info['name']);
     // console.log(info['role']);
-    // console.log(info['image']);
+    console.log(info['image']);
     // console.log('_____________');
 
   
