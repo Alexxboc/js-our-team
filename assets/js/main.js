@@ -46,6 +46,7 @@ console.log(team);
 
 const rowElement = document.querySelector('.row')
 
+// Creo un ciclo for
 for (let i = 0; i < team.length; i++) {
     const info = team[i];
     // Creo l'elemento da appendere alla dom
@@ -55,12 +56,13 @@ for (let i = 0; i < team.length; i++) {
         <div class="name">${info['name']}</div>
         <div class="role">${info['role']}</div>
     </div>`
+    // appendo l'elemento alla DOM
     rowElement.insertAdjacentHTML('beforeend', colHtmlElement);
 
 
     // console.log(info['name']);
     // console.log(info['role']);
-    console.log(info['image']);
+    // console.log(info['image']);
     // console.log('_____________');
 
   
