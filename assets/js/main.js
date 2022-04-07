@@ -34,15 +34,35 @@ const team = [
 /* 
 MILESTONE 1 (da fare entro le 18):
 stampare su console le informazioni di nome, ruolo e la stringa della foto
+
+MILESTONE 2 (se ce la fai falla entro le 18 altrimenti puoi consegnare anche dopo le 18 - easy):
+stampare le stesse informazioni su DOM sottoforma di stringhe
+
 */
 
 console.log(team);
 
+// Seleziono l'elemento della DOM dove appendere le info dei membri del team
+
+const rowElement = document.querySelector('.row')
+
 for (let i = 0; i < team.length; i++) {
     const info = team[i];
+    // Creo l'elemento da appendere alla dom
+    let colHtmlElement = `
+    <div class="col">
+        <img src="${info['image']}" alt="">
+        <div class="name">${info['name']}</div>
+        <div class="role">${info['role']}</div>
+    </div>`
+    rowElement.insertAdjacentHTML('beforeend', colHtmlElement);
 
-    console.log(info['name']);
-    console.log(info['role']);
-    console.log(info['image']);
-    console.log('_____________');
+
+    // console.log(info['name']);
+    // console.log(info['role']);
+    // console.log(info['image']);
+    // console.log('_____________');
+
+  
 }
+

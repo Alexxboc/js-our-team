@@ -1,0 +1,29 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    text-align: center;
+    padding: 3rem;
+}
+
+header h2, header p {
+    margin-bottom: 2rem;
+}
+
+.container {
+    margin: auto;
+    max-width: 1200px;
+    background-color: aqua;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col {
+    width: calc(100% / 3)
+}
