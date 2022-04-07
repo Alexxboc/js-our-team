@@ -36,3 +36,13 @@ MILESTONE 1 (da fare entro le 18):
 stampare su console le informazioni di nome, ruolo e la stringa della foto
 */
 
+console.log(team);
+
+for (let i = 0; i < team.length; i++) {
+    const info = team[i];
+
+    console.log(info['name']);
+    console.log(info['role']);
+    console.log(info['image']);
+    console.log('_____________');
+}
