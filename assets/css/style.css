@@ -43,8 +43,13 @@ header h2, header p {
 
 .col {
     width: calc(100% / 3 - 20px);
+    background-color: white;
     text-align: center;
     transition: 2000ms;
+    border: 1px solid lightblue;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    padding-bottom: 1rem;
 }
 
 .col:hover {
