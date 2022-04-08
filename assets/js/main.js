@@ -49,30 +49,51 @@ console.log(team);
 
 // Seleziono l'elemento della DOM dove appendere le info dei membri del team
 
-const rowElement = document.querySelector('.row')
+// const rowElement = document.querySelector('.row')
 
 // Creo un ciclo for
-for (let i = 0; i < team.length; i++) {
-    const member = team[i];
-    // Creo l'elemento da appendere alla dom
-    // let colHtmlElement = 
-    // `
-    // <div class="col">
-    //     <img src="./assets/img/${info['image']}" alt="">
-    //     <div class="name">${info['name']}</div>
-    //     <div class="role">${info['role']}</div>
-    // </div>
-    // `
-    // appendo l'elemento alla DOM
-    const memberMarkup = generateMemberMarkup(member)
-    rowElement.insertAdjacentHTML('beforeend', memberMarkup);
+// for (let i = 0; i < team.length; i++) {
+//     const member = team[i];
+//     // Creo l'elemento da appendere alla dom
+//     // let colHtmlElement = 
+//     // `
+//     // <div class="col">
+//     //     <img src="./assets/img/${info['image']}" alt="">
+//     //     <div class="name">${info['name']}</div>
+//     //     <div class="role">${info['role']}</div>
+//     // </div>
+//     // `
+//     // appendo l'elemento alla DOM
+//     const memberMarkup = generateMemberMarkup(member)
+//     rowElement.insertAdjacentHTML('beforeend', memberMarkup);
+// }
 
+
+/**
+ * Genera le card con i membri
+ * @param {array} objectList Array di oggetti della lista 
+ * @param {*} css_selector Selettore css dell'elemento della DOM
+ */
+function generateTeamCards(objectList, css_selector) {
+  const rowElement = document.querySelector(css_selector)
+  rowElement.innerHTML = ''
+  console.log(rowElement);
+  for (let i = 0; i < objectList.length; i++) {
+        const member = objectList[i];
+        // appendo l'elemento alla DOM
+        const memberMarkup = generateMemberMarkup(member)
+        rowElement.insertAdjacentHTML('beforeend', memberMarkup);
+        
+  }
+}
+  generateTeamCards(team, '.row')
+ 
 
     // console.log(info['name']);
     // console.log(info['role']);
     // console.log(info['image']);
     // console.log('_____________');
-}
+
 
 /**
  * Generate dinamic markup for the members card
@@ -115,8 +136,9 @@ formElement.addEventListener('submit', function(event){
   team.push(newMember)
   console.log(team);
   // rigenerare la dom con le card
-  const memberMarkup = generateMemberMarkup(newMember)
-  rowElement.insertAdjacentHTML('beforeend', memberMarkup);
+  // const memberMarkup = generateMemberMarkup(newMember)
+  // rowElement.insertAdjacentHTML('beforeend', memberMarkup);
+  generateTeamCards(team, '.row')
   // ripulire gli input prima dell'invio si un nuovo form
   document.getElementById('name').value = ''
   document.getElementById('role').value = ''
@@ -124,6 +146,15 @@ formElement.addEventListener('submit', function(event){
 
   // Impedire di inviare form senza compilare campi
   // Aggiungere required agli input
+
+  // Mostra un allerta che scompare dopo 2 secondi
+  const formAlert = document.querySelector('.alert');
+  formAlert.style.display = 'block'
+  formAlert.innerHTML = `Hai inserito ${nameValue} con successo!🙌`
+  setTimeout(() => {
+    formAlert.style.display = 'none'
+  }, 2000)
+
 
 })
 
